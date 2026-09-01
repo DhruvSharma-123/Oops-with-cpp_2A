@@ -89,30 +89,58 @@
 // }
 
 
+// Ques 4
+// #include <iostream>
+// using namespace std;
+// class funOR{
+// public:
+// void area(int l,int b,int s){
+//     cout<<"Area of Square:"<<s*s<<endl;
+// cout<<"Area of Rectangle:"<<l*b<<endl;
+// }
 
+// void area(double l,int b,double s){
+//     cout<<"Area of Square:"<<s*s<<endl;
+// cout<<"Area of Rectangle:"<<l*b<<endl;
+// }
+
+// void Si(int p,int r,int t){
+//     cout<<"Simple Interest:"<<(p*r*t)/100<<endl;
+// }
+
+// };
+
+// int main(){
+//     funOR f;
+//     f.area(1,2,3);
+//         f.area(1.5,2.6,3.5);
+// f.Si(100,50,1);
+// }
+
+
+// QUES 5
 #include <iostream>
 using namespace std;
-class funOR{
-public:
-void area(int l,int b,int s){
-    cout<<"Area of Square:"<<s*s<<endl;
-cout<<"Area of Rectangle:"<<l*b<<endl;
+class Product{
+    public:
+string name;
+int price;
+Product(string name,int price){
+this->name=name;
+this->price=price;
 }
-
-void area(double l,int b,double s){
-    cout<<"Area of Square:"<<s*s<<endl;
-cout<<"Area of Rectangle:"<<l*b<<endl;
-}
-
-void Si(int p,int r,int t){
-    cout<<"Simple Interest:"<<(p*r*t)/100<<endl;
-}
-
 };
 
+void HigherPrice(Product& p,Product& q){
+    if(p.price>q.price){
+        cout<<"First product is more expensive:"<<p.price<<endl;
+    }else{
+             cout<<"Second product is more expensive:"<<q.price<<endl;
+    }
+}
+
 int main(){
-    funOR f;
-    f.area(1,2,3);
-        f.area(1.5,2.6,3.5);
-f.Si(100,50,1);
+    Product p("T-v",25000);
+    Product q("Fridge",35000);
+    HigherPrice(p,q);
 }
