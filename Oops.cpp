@@ -118,29 +118,63 @@
 // }
 
 
-// QUES 5
+// // QUES 5
+// #include <iostream>
+// using namespace std;
+// class Product{
+//     public:
+// string name;
+// int price;
+// Product(string name,int price){
+// this->name=name;
+// this->price=price;
+// }
+// };
+
+// void HigherPrice(Product& p,Product& q){
+//     if(p.price>q.price){
+//         cout<<"First product is more expensive:"<<p.price<<endl;
+//     }else{
+//              cout<<"Second product is more expensive:"<<q.price<<endl;
+//     }
+// }
+
+// int main(){
+//     Product p("T-v",25000);
+//     Product q("Fridge",35000);
+//     HigherPrice(p,q);
+// }
+
+
+
+//Ques 6
 #include <iostream>
 using namespace std;
-class Product{
-    public:
-string name;
-int price;
-Product(string name,int price){
-this->name=name;
-this->price=price;
+class Marks{
+private:
+int arr[5]={55,66,44,77,88};
+public:
+void print(){
+    for(auto x:arr){
+        cout<<x<<" ";
+    }
 }
+friend void totalMarks(Marks& m);
+
 };
 
-void HigherPrice(Product& p,Product& q){
-    if(p.price>q.price){
-        cout<<"First product is more expensive:"<<p.price<<endl;
-    }else{
-             cout<<"Second product is more expensive:"<<q.price<<endl;
+void totalMarks(Marks& m){
+    int sum=0;
+    for(int i=0;i<5;i++){
+      
+        sum=sum+m.arr[i];
     }
+    cout<<endl;
+    cout<<"Toatl Marks:"<<sum<<endl;
 }
 
 int main(){
-    Product p("T-v",25000);
-    Product q("Fridge",35000);
-    HigherPrice(p,q);
+    Marks m1;
+    m1.print();
+totalMarks(m1);
 }
