@@ -53,37 +53,66 @@
 
 
 //Ques-3
+// #include <iostream>
+// using namespace std;
+// void callByV(int a,int b){
+//     int c=a;
+//     a=b;
+//     b=c;
+//     cout<<"After swapping:"<<a<<" "<<b<<endl;
+// }
+
+// void callByR(int& a,int& b){
+//     int c=a;
+//     a=b;
+//     b=c;
+//     cout<<"After swapping:"<<a<<" "<<b<<endl;
+// }
+
+// int main(){
+//     int a;
+//     cout<<"Enter first No:";
+//     cin>>a;
+//     int b;
+//     cout<<"Enter Second No:";
+// cin>>b;
+// cout<<"Call By Value"<<endl;
+// cout<<"Before Swapping:"<<a<<" "<<b<<endl;
+// callByV(a,b);
+// cout<<a<<" "<<b<<endl;
+
+// cout<<"Call By Reference"<<endl;
+// cout<<"Before Swapping:"<<a<<" "<<b<<endl;
+// callByR(a,b);
+// cout<<a<<" "<<b<<endl;
+
+// }
+
+
+
 #include <iostream>
 using namespace std;
-void callByV(int a,int b){
-    int c=a;
-    a=b;
-    b=c;
-    cout<<"After swapping:"<<a<<" "<<b<<endl;
+class funOR{
+public:
+void area(int l,int b,int s){
+    cout<<"Area of Square:"<<s*s<<endl;
+cout<<"Area of Rectangle:"<<l*b<<endl;
 }
 
-void callByR(int& a,int& b){
-    int c=a;
-    a=b;
-    b=c;
-    cout<<"After swapping:"<<a<<" "<<b<<endl;
+void area(double l,int b,double s){
+    cout<<"Area of Square:"<<s*s<<endl;
+cout<<"Area of Rectangle:"<<l*b<<endl;
 }
+
+void Si(int p,int r,int t){
+    cout<<"Simple Interest:"<<(p*r*t)/100<<endl;
+}
+
+};
 
 int main(){
-    int a;
-    cout<<"Enter first No:";
-    cin>>a;
-    int b;
-    cout<<"Enter Second No:";
-cin>>b;
-cout<<"Call By Value"<<endl;
-cout<<"Before Swapping:"<<a<<" "<<b<<endl;
-callByV(a,b);
-cout<<a<<" "<<b<<endl;
-
-cout<<"Call By Reference"<<endl;
-cout<<"Before Swapping:"<<a<<" "<<b<<endl;
-callByR(a,b);
-cout<<a<<" "<<b<<endl;
-
+    funOR f;
+    f.area(1,2,3);
+        f.area(1.5,2.6,3.5);
+f.Si(100,50,1);
 }
