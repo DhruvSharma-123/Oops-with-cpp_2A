@@ -148,33 +148,33 @@
 
 
 //Ques 6
-#include <iostream>
-using namespace std;
-class Marks{
-private:
-int arr[5]={55,66,44,77,88};
-public:
-void print(){
-    for(auto x:arr){
-        cout<<x<<" ";
-    }
-}
-friend void totalMarks(Marks& m);
+// #include <iostream>
+// using namespace std;
+// class Marks{
+// private:
+// int arr[5]={55,66,44,77,88};
+// public:
+// void print(){
+//     for(auto x:arr){
+//         cout<<x<<" ";
+//     }
+// }
+// friend void totalMarks(Marks& m);
 
-};
+// };
 
-void totalMarks(Marks& m){
-    int sum=0;
-    for(int i=0;i<5;i++){
+// void totalMarks(Marks& m){
+//     int sum=0;
+//     for(int i=0;i<5;i++){
       
-        sum=sum+m.arr[i];
-    }
-    cout<<endl;
-    cout<<"Toatl Marks:"<<sum<<endl;
-}
+//         sum=sum+m.arr[i];
+//     }
+//     cout<<endl;
+//     cout<<"Toatl Marks:"<<sum<<endl;
+// }
 
-int main(){
-    Marks m1;
-    m1.print();
-totalMarks(m1);
-}
+// int main(){
+//     Marks m1;
+//     m1.print();
+// totalMarks(m1);
+// }
