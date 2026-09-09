@@ -178,3 +178,84 @@
 //     m1.print();
 // totalMarks(m1);
 // }
+
+
+// #include <iostream>
+// using namespace std;
+// class Marks{
+// private:
+// int arr[5]={55,66,44,77,88};
+// public:
+// void print(){
+//     for(auto x:arr){
+//         cout<<x<<" ";
+//     }
+// }
+// };
+// int main(){
+//     Marks m1;
+//     m1.print();
+// }
+
+// #include <iostream>
+// using namespace std;
+// class BnakAccount{
+//     private:
+//     int AccountNo;
+//     int BankBalance=0;
+
+//     public:
+// void Deposite(int Acc,int BB){
+//     AccountNo=Acc;
+// BankBalance=BB+BankBalance;
+// cout<<"Total Amount"<<BankBalance<<endl; 
+// }
+
+// void Withdrawl(int amount){
+// BankBalance=BankBalance-amount;
+// cout<<"Total amount after withdrawl:"<<BankBalance<<endl;
+// }
+// };
+// int main(){
+//     BnakAccount b1;
+//     b1.Deposite(153,500);
+//     b1.Withdrawl(200);
+// }
+
+
+#include <iostream>
+using namespace std;
+
+class Number {
+    int x;
+
+public:
+    void input() {
+        cin >> x;
+    }
+
+    Number sum(Number n) {
+        Number temp;
+        temp.x = x + n.x;
+        return temp;
+    }
+
+    void display() {
+        cout << x;
+    }
+};
+
+int main() {
+    Number a, b, c;
+
+    cout << "Enter two numbers: ";
+    a.input();
+    b.input();
+
+    c = a.sum(b);
+
+    cout << "Sum = ";
+    c.display();
+
+    return 0;
+}
