@@ -36,37 +36,68 @@
 
 
 
+// #include <iostream>
+// using namespace std;
+
+// class BankAccount{
+// private:
+// int AccountNo;
+// string customeerName;
+// int balance;
+// public:
+// BankAccount(int A,string N,int B){
+//     AccountNo=A;
+//     customeerName=N;
+//     balance=B;
+// }
+
+// friend void compareBalance(BankAccount& b1,BankAccount& b2);
+
+// };
+
+// void compareBalance(BankAccount& b1,BankAccount& b2){
+//     if(b1.balance>b2.balance){
+//         cout<<b1.customeerName<<" has more Bank-Balance:"<<b1.balance<<endl;
+//     }else if(b1.balance==b2.balance){
+//         cout<<"In boyh account has same balance";
+//     }else{
+//         cout<<b2.customeerName<<" has more balance:"<<b2.balance<<endl;
+//     }
+// };
+
+// int main(){
+//     BankAccount b1(68,"Dhruv",80000);
+//     BankAccount b2(25,"Bhaskar",500);
+//     compareBalance(b1,b2);
+// }
+
+
 #include <iostream>
 using namespace std;
-
-class BankAccount{
-private:
-int AccountNo;
-string customeerName;
-int balance;
+class Patient{
 public:
-BankAccount(int A,string N,int B){
-    AccountNo=A;
-    customeerName=N;
-    balance=B;
+int patientID;
+string name;
+int count=0;
+static int activePatient;
+Patient(int ID,string n){
+    patientID=ID;
+    name=n;
+    activePatient++;
+}
+~Patient(){
+    activePatient--;
 }
 
-friend void compareBalance(BankAccount& b1,BankAccount& b2);
+
 
 };
 
-void compareBalance(BankAccount& b1,BankAccount& b2){
-    if(b1.balance>b2.balance){
-        cout<<b1.customeerName<<" has more Bank-Balance:"<<b1.balance<<endl;
-    }else if(b1.balance==b2.balance){
-        cout<<"In boyh account has same balance";
-    }else{
-        cout<<b2.customeerName<<" has more balance:"<<b2.balance<<endl;
-    }
-};
+int Patient::activePatient=5;
 
 int main(){
-    BankAccount b1(68,"Dhruv",80000);
-    BankAccount b2(25,"Bhaskar",500);
-    compareBalance(b1,b2);
+Patient p1(21,"Akshit");
+Patient p2(22,"Aksaht");
+    cout<<"Active patient:"<<Patient::activePatient<<endl;
+
 }
