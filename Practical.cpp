@@ -137,40 +137,114 @@
 
 
 
+// #include <iostream>
+// using namespace std;
+// class Employee{
+// public:
+// string name;
+// int employeeid;
+// int salary;
+// Employee(){
+//     cout<<"Obj is created";
+// }
+
+// Employee(string n,int id,int s){
+//     name=n;
+//     employeeid=id;
+//     salary=s;
+// }
+
+// Employee(Employee& e){
+//     name=e.name;
+//     employeeid=e.employeeid;
+//     salary=e.salary;
+// }
+
+// void  display()const{
+//     cout<<name<<endl;
+//     cout<<employeeid<<endl;
+//     cout<<salary<<endl;
+// }
+// };
+
+// int main(){
+//     const Employee e("Sihna",68,10000);
+//     e.display();
+//     Employee e1("Satti",65,1000);
+// Employee e2(e1);
+// e2.display();
+// }
+
+
+
+
 #include <iostream>
 using namespace std;
-class Employee{
+
+class ResultAnalyzer;  // Forward declaration
+
+class StudentResult {
+private:
+    int rollNo;
+    string name;
+    int marks[3];
+    static int totalStudents;
+
 public:
-string name;
-int employeeid;
-int salary;
-Employee(){
-    cout<<"Obj is created";
-}
+    // Parameterized constructor
+    StudentResult(int r, string n, int m1, int m2, int m3) {
+        rollNo = r;
+        name = n;
+        marks[0] = m1;
+        marks[1] = m2;
+        marks[2] = m3;
+        totalStudents++;
+    }
 
-Employee(string n,int id,int s){
-    name=n;
-    employeeid=id;
-    salary=s;
-}
+    // Friend class declaration
+    friend class ResultAnalyzer;
 
-Employee(Employee& e){
-    name=e.name;
-    employeeid=e.employeeid;
-    salary=e.salary;
-}
+    // Static function to display total students
+    static void showTotalStudents() {
+        cout << "Total Students: " << totalStudents << endl;
+    }
 
-void  display()const{
-    cout<<name<<endl;
-    cout<<employeeid<<endl;
-    cout<<salary<<endl;
-}
+    // Destructor
+    ~StudentResult() {
+        cout << "Destructor called for " << name << endl;
+    }
 };
 
-int main(){
-    const Employee e("Sihna",68,10000);
-    e.display();
-    Employee e1("Satti",65,1000);
-Employee e2(e1);
-e2.display();
+// Initialize static member
+int StudentResult::totalStudents = 0;
+
+class ResultAnalyzer {
+public:
+    void analyze(StudentResult &s) {
+        int total = s.marks[0] + s.marks[1] + s.marks[2];
+        float percentage = total / 3.0;
+
+        cout << "\n--- Student Result ---\n";
+        cout << "Roll No: " << s.rollNo << endl;
+        cout << "Name: " << s.name << endl;
+        cout << "Total Marks: " << total << endl;
+        cout << "Percentage: " << percentage << "%" << endl;
+
+        if (percentage >= 40)
+            cout << "Result: Pass<<endl";
+        else
+            cout << "Result: Fail<<endl";
+    }
+};
+
+int main() {
+    StudentResult s1(101, "Dhruv", 85, 90, 80);
+    StudentResult s2(102, "Riya", 35, 40, 30);
+
+    ResultAnalyzer analyzer;
+    analyzer.analyze(s1);
+    analyzer.analyze(s2);
+
+    StudentResult::showTotalStudents();
+return 0
 }
