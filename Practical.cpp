@@ -104,33 +104,73 @@
 
 
 
+// #include <iostream>
+// using namespace std;
+// class University{
+//     private:
+//     string UniName="AKTU";
+//     public:
+//     class Department{
+
+//         public:
+//         string DeptName;
+//         int StudentCount;
+//         Department(string n,int c){
+//         DeptName=n;
+//         StudentCount=c;
+       
+//         }
+//          void display(University& u){
+//             cout<<u.UniName<<endl;
+//             cout<<DeptName<<endl;
+//             cout<<StudentCount<<endl;
+//         }
+
+//     };
+// };
+
+// int main(){
+//     University u1;
+// University::Department d1("AIML",21);
+// d1.display(u1);
+// }
+
+
+
 #include <iostream>
 using namespace std;
-class University{
-    private:
-    string UniName="AKTU";
-    public:
-    class Department{
+class Employee{
+public:
+string name;
+int employeeid;
+int salary;
+Employee(){
+    cout<<"Obj is created";
+}
 
-        public:
-        string DeptName;
-        int StudentCount;
-        Department(string n,int c){
-        DeptName=n;
-        StudentCount=c;
-       
-        }
-         void display(University& u){
-            cout<<u.UniName<<endl;
-            cout<<DeptName<<endl;
-            cout<<StudentCount<<endl;
-        }
+Employee(string n,int id,int s){
+    name=n;
+    employeeid=id;
+    salary=s;
+}
 
-    };
+Employee(Employee& e){
+    name=e.name;
+    employeeid=e.employeeid;
+    salary=e.salary;
+}
+
+void  display()const{
+    cout<<name<<endl;
+    cout<<employeeid<<endl;
+    cout<<salary<<endl;
+}
 };
 
 int main(){
-    University u1;
-University::Department d1("AIML",21);
-d1.display(u1);
+    const Employee e("Sihna",68,10000);
+    e.display();
+    Employee e1("Satti",65,1000);
+Employee e2(e1);
+e2.display();
 }
