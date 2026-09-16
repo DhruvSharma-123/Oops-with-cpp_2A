@@ -208,7 +208,7 @@
 // void Deposite(int Acc,int BB){
 //     AccountNo=Acc;
 // BankBalance=BB+BankBalance;
-// cout<<"Total Amount"<<BankBalance<<endl; 
+// cout<<"Total Amount:"<<BankBalance<<endl; 
 // }
 
 // void Withdrawl(int amount){
@@ -223,39 +223,86 @@
 // }
 
 
+// #include <iostream>
+// using namespace std;
+
+// class Number {
+//     int x;
+
+// public:
+//     void input() {
+//         cin >> x;
+//     }
+
+//     Number sum(Number n) {
+//         Number temp;
+//         temp.x = x + n.x;
+//         return temp;
+//     }
+
+//     void display() {
+//         cout << x;
+//     }
+// };
+
+// int main() {
+//     Number a, b, c;
+
+//     cout << "Enter two numbers: ";
+//     a.input();
+//     b.input();
+
+//     c = a.sum(b);
+
+//     cout << "Sum = ";
+//     c.display();
+
+//     return 0;
+// }
+
+
 #include <iostream>
 using namespace std;
 
-class Number {
-    int x;
-
+class Student
+{
 public:
-    void input() {
-        cin >> x;
+    string name;
+    int rollno;
+    string branch;
+
+    // Parameterized Constructor
+    Student(string n, int r, string b)
+    {
+        name = n;
+        rollno = r;
+        branch = b;
+
+        cout << name << " " << rollno << " " << branch << endl;
     }
 
-    Number sum(Number n) {
-        Number temp;
-        temp.x = x + n.x;
-        return temp;
+    // Copy Constructor
+    Student(Student &s)
+    {
+        name = s.name;
+        rollno = s.rollno;
+        branch = s.branch;
+
+        cout << name << " " << rollno << " " << branch << endl;
     }
 
-    void display() {
-        cout << x;
+    // Destructor
+    ~Student()
+    {
+        cout << "Free space" << endl;
     }
 };
 
-int main() {
-    Number a, b, c;
+int main()
+{
+    Student s1("Dhruv", 68, "AIML");
 
-    cout << "Enter two numbers: ";
-    a.input();
-    b.input();
-
-    c = a.sum(b);
-
-    cout << "Sum = ";
-    c.display();
+    Student s2(s1);
 
     return 0;
 }
