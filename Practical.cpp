@@ -72,32 +72,65 @@
 // }
 
 
+// #include <iostream>
+// using namespace std;
+// class Patient{
+// public:
+// int patientID;
+// string name;
+// int count=0;
+// static int activePatient;
+// Patient(int ID,string n){
+//     patientID=ID;
+//     name=n;
+//     activePatient++;
+// }
+// ~Patient(){
+//     activePatient--;
+// }
+
+
+
+// };
+
+// int Patient::activePatient=5;
+
+// int main(){
+// Patient p1(21,"Akshit");
+// Patient p2(22,"Aksaht");
+//     cout<<"Active patient:"<<Patient::activePatient<<endl;
+
+// }
+
+
+
 #include <iostream>
 using namespace std;
-class Patient{
-public:
-int patientID;
-string name;
-int count=0;
-static int activePatient;
-Patient(int ID,string n){
-    patientID=ID;
-    name=n;
-    activePatient++;
-}
-~Patient(){
-    activePatient--;
-}
+class University{
+    private:
+    string UniName="AKTU";
+    public:
+    class Department{
 
+        public:
+        string DeptName;
+        int StudentCount;
+        Department(string n,int c){
+        DeptName=n;
+        StudentCount=c;
+       
+        }
+         void display(University& u){
+            cout<<u.UniName<<endl;
+            cout<<DeptName<<endl;
+            cout<<StudentCount<<endl;
+        }
 
-
+    };
 };
 
-int Patient::activePatient=5;
-
 int main(){
-Patient p1(21,"Akshit");
-Patient p2(22,"Aksaht");
-    cout<<"Active patient:"<<Patient::activePatient<<endl;
-
+    University u1;
+University::Department d1("AIML",21);
+d1.display(u1);
 }
