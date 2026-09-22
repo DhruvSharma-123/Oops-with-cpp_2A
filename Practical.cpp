@@ -246,5 +246,5 @@ int main() {
     analyzer.analyze(s2);
 
     StudentResult::showTotalStudents();
-return 0
+return 0;
 }
