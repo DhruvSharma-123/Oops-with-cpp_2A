@@ -114,28 +114,42 @@
 
 
 //Run Time Polymorphism
+// #include <iostream>
+// using namespace std;
+// class Class{
+//     public:
+// int session;
+// string branch;
+// virtual void Display(string b,int s){
+// cout<<"I am parent member fun";
+// cout<<b<<" "<<s<<endl;
+// }};
+
+// class Student:public Class{
+//     public:
+//     void Display(string b,int s){
+//         cout<<"I am children fun"<<endl;
+//         cout<<b<<s<<endl;
+//     }
+// };  
+
+// int main(){
+//     Class* c1;
+// Student s1;
+// c1=&s1;
+// c1->Display("aiml",2029);
+// }
+
 #include <iostream>
 using namespace std;
-class Class{
-    public:
-int session;
-string branch;
-virtual void Display(string b,int s){
-cout<<"I am parent member fun";
-cout<<b<<" "<<s<<endl;
-}};
-
-class Student:public Class{
-    public:
-    void Display(string b,int s){
-        cout<<"I am children fun"<<endl;
-        cout<<b<<s<<endl;
-    }
+class Student{
+public:
+Student(string name ,int roll){
+    cout<<name<<" "<<roll<<endl;
+}
 };
 
 int main(){
-    Class* c1;
-Student s1;
-c1=&s1;
-c1->Display("aiml",2029);
-}
+    Student s[2]={Student("dhruv",68),Student("keshav",98)};
+
+};
