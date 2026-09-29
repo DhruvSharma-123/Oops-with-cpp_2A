@@ -140,16 +140,42 @@
 // c1->Display("aiml",2029);
 // }
 
+// #include <iostream>
+// using namespace std;
+// class Student{
+// public:
+// Student(string name ,int roll){
+//     cout<<name<<" "<<roll<<endl;
+// }
+// };
+
+// int main(){
+//     Student s[2]={Student("dhruv",68),Student("keshav",98)};
+
+// };
+
+
+
 #include <iostream>
 using namespace std;
-class Student{
-public:
-Student(string name ,int roll){
-    cout<<name<<" "<<roll<<endl;
-}
-};
+class student{
+    public:
+    int rollNO;
+    string studentName;
+    student* next=NULL;
+    student(int r,string n){
+        studentName=n;
+        rollNO=r;
+    }
 
+};
 int main(){
-    Student s[2]={Student("dhruv",68),Student("keshav",98)};
-
-};
+    student s1(68,"Dhruv");
+    student s2(66,"Keshav");
+    student s3(65,"Bhaskar");
+    s1.next=&s2;
+    s2.next=&s3;
+cout<<s1.studentName<<endl;
+cout<<s1.next->studentName<<endl;
+cout<<s1.next->next->studentName<<endl;
+}

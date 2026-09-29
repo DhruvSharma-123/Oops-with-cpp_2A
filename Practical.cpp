@@ -299,29 +299,29 @@
 
 
 
-    #include <iostream>
-    using namespace std;
-    class Product{
-        public:
-        int Productid;
-        string ProductName;
-        int price;
-        Product(int p,string pn){
-            Productid=p;
-            ProductName=pn;
+//     #include <iostream>
+//     using namespace std;
+//     class Product{
+//         public:
+//         int Productid;
+//         string ProductName;
+//         int price;
+//         Product(int p,string pn){
+//             Productid=p;
+//             ProductName=pn;
             
-        }
-        int CalculatePrice(int price){
-return price;
-        }
-        int CalculatePrice(int Price,int disP,int deliverycharge){
-            int calculate=Price-((Price*disP)/100)+deliverycharge;
-            return calculate;
-        }
-    };
+//         }
+//         int CalculatePrice(int price){
+// return price;
+//         }
+//         int CalculatePrice(int Price,int disP,int deliverycharge){
+//             int calculate=Price-((Price*disP)/100)+deliverycharge;
+//             return calculate;
+//         }
+//     };
 
-    int main(){
-        Product* ptr=new Product(68,"AC");
-cout<<ptr->CalculatePrice(100,5,10)<<endl;
-cout<<ptr->CalculatePrice(1000);
-    }
+//     int main(){
+//         Product* ptr=new Product(68,"AC");
+// cout<<ptr->CalculatePrice(100,5,10)<<endl;
+// cout<<ptr->CalculatePrice(1000);
+//     }
