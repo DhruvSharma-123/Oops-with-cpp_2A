@@ -326,46 +326,76 @@
 // cout<<ptr->CalculatePrice(1000);
 //     }
 
+//Ques 9.1
+// #include <iostream>
+// using namespace std;
+// class Student{
+//     public:
+//     int rollNo;
+//     string name;
+//     int marks;
+//     void input(){
+//         cout<<"Enter Name:";
+//       cin>>name;
+//       cout<<"Enter RollNo:";
+//       cin>>rollNo;
+//       cout<<"Enter Marks:";
+//       cin>>marks;
 
-#include <iostream>
+//     }
+//     void Display(){
+//         cout<<name<<" "<<rollNo<<" "<<marks<<endl;
+//     }
+// };
+
+// int main(){
+//     int n;
+//     cout<<"Enter No of Student:";
+//     cin>>n;
+//     Student* student=new Student[n];
+//     for(int i=0;i<n;i++){
+//         cout<<"Student "<<i<<":";
+//         student[i].input();
+//     }
+//     for(int i=0;i<n;i++){
+// student[i].Display();
+//     }
+//     Student* highest=&student[0];
+// for(int i=1;i<n;i++){
+//     if(student[i].marks>highest->marks){
+// highest=&student[i];
+//     }
+
+// }
+// cout<<highest->name<<" has highest marks "<<highest->marks<<endl;
+// }
+
+
+
+// Ques-11
+#include<iostream>
 using namespace std;
-class Student{
+class ServiceRoad{
     public:
-    int rollNo;
     string name;
-    int marks;
-    void input(){
-        cout<<"Enter Name:";
-      cin>>name;
-      cout<<"Enter RollNo:";
-      cin>>rollNo;
-      cout<<"Enter Marks:";
-      cin>>marks;
+    int cost;
+void Display(string name,int cost){
+    cout<<name<<" "<<cost<<endl;
+}
+};
 
-    }
-    void Display(){
-        cout<<name<<" "<<rollNo<<" "<<marks<<endl;
+class Vehicle{
+    public:
+    int vehicleno;
+    int ownername;
+    int servicecount=5;
+    ServiceRoad* service=new ServiceRoad[5];
+    ~Vehicle(){
+cout<<"Free Space";
     }
 };
 
 int main(){
-    int n;
-    cout<<"Enter No of Student:";
-    cin>>n;
-    Student* student=new Student[n];
-    for(int i=0;i<n;i++){
-        cout<<"Student "<<i<<":";
-        student[i].input();
-    }
-    for(int i=0;i<n;i++){
-student[i].Display();
-    }
-    Student* highest=&student[0];
-for(int i=1;i<n;i++){
-    if(student[i].marks>highest->marks){
-highest=&student[i];
-    }
-
-}
-cout<<highest->name<<" has highest marks "<<highest->marks<<endl;
+    Vehicle* v=new Vehicle;
+    v->service[1].Display("dhruv",25);
 }
