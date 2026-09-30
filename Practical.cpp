@@ -367,5 +367,5 @@ highest=&student[i];
     }
 
 }
-cout<<highest->name<<" has 0 marks "<<highest->marks<<endl;
+cout<<highest->name<<" has highest marks "<<highest->marks<<endl;
 }
