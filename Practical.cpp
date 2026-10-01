@@ -372,30 +372,53 @@
 
 
 
-// Ques-11
+// // Ques-11
+// #include<iostream>
+// using namespace std;
+// class ServiceRoad{
+//     public:
+//     string name;
+//     int cost;
+// void Display(string name,int cost){
+//     cout<<name<<" "<<cost<<endl;
+// }
+// };
+
+// class Vehicle{
+//     public:
+//     int vehicleno;
+//     int ownername;
+//     int servicecount=5;
+//     ServiceRoad* service=new ServiceRoad[5];
+//     ~Vehicle(){
+// cout<<"Free Space";
+//     }
+// };
+
+// int main(){
+//     Vehicle* v=new Vehicle;
+//     v->service[1].Display("dhruv",25);
+// }
+
+
+
 #include<iostream>
+#include <memory>
 using namespace std;
-class ServiceRoad{
+class Student{
     public:
     string name;
-    int cost;
-void Display(string name,int cost){
-    cout<<name<<" "<<cost<<endl;
-}
-};
-
-class Vehicle{
-    public:
-    int vehicleno;
-    int ownername;
-    int servicecount=5;
-    ServiceRoad* service=new ServiceRoad[5];
-    ~Vehicle(){
-cout<<"Free Space";
+    int rollNo;
+    Student(string n,int r){
+name=n;;
+rollNo=r;
     }
-};
 
+
+};
 int main(){
-    Vehicle* v=new Vehicle;
-    v->service[1].Display("dhruv",25);
+  unique_ptr<Student> ptr = make_unique<Student>("Dhruv", 68);
+cout<<ptr->name<<endl;
+//unique_ptr<Student> ptr1=ptr;                                     //You can not do this 
+
 }
