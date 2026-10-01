@@ -402,23 +402,46 @@
 
 
 
-#include<iostream>
+// #include<iostream>
+// #include <memory>
+// using namespace std;
+// class Student{
+//     public:
+//     string name;
+//     int rollNo;
+//     Student(string n,int r){
+// name=n;;
+// rollNo=r;
+//     }
+
+
+// };
+// int main(){
+//   unique_ptr<Student> ptr = make_unique<Student>("Dhruv", 68);
+// cout<<ptr->name<<endl;
+//unique_ptr<Student> ptr1=ptr;                                     //You can not do this 
+
+// }
+
+
+
+
+#include <iostream>
 #include <memory>
 using namespace std;
 class Student{
-    public:
-    string name;
-    int rollNo;
-    Student(string n,int r){
-name=n;;
-rollNo=r;
-    }
-
-
+public:
+string name;
+int rollNo;
+Student(string name,int rollNo){
+    this->name=name;
+    this->rollNo=rollNo;
+}
 };
-int main(){
-  unique_ptr<Student> ptr = make_unique<Student>("Dhruv", 68);
-cout<<ptr->name<<endl;
-//unique_ptr<Student> ptr1=ptr;                                     //You can not do this 
 
+int main(){
+    shared_ptr<Student> ptr=make_shared<Student>("Dhruv",22);
+    cout<<ptr->name<<endl;
+    shared_ptr <Student> ptr1=ptr;
+    cout<<ptr1->rollNo<<endl;
 }
