@@ -156,26 +156,87 @@
 
 
 
+// #include <iostream>
+// using namespace std;
+// class student{
+//     public:
+//     int rollNO;
+//     string studentName;
+//     student* next=NULL;
+//     student(int r,string n){
+//         studentName=n;
+//         rollNO=r;
+//     }
+
+// };
+// int main(){
+//     student s1(68,"Dhruv");
+//     student s2(66,"Keshav");
+//     student s3(65,"Bhaskar");
+//     s1.next=&s2;
+//     s2.next=&s3;
+// cout<<s1.studentName<<endl;
+// cout<<s1.next->studentName<<endl;
+// cout<<s1.next->next->studentName<<endl;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+// int x=10;
+// int main(){
+//     int x=20;
+//     cout<<x<<endl;
+//     cout<<::x<<endl;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+// namespace Aiml{
+//     string vikas="OOps";
+// }
+// namespace WD{
+// string vikas="WD";
+// }
+
+// int main(){
+//     cout<<Aiml::vikas<<endl;
+//     cout<<WD::vikas<<endl;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+// namespace Aiml{
+//     class oops{
+//         public:
+//         void Display(){
+//             cout<<"Hello"<<endl;
+//         }
+//     };
+// }
+
+// int main(){
+//     Aiml::oops o;
+//     o.Display();
+// }
+
+
 #include <iostream>
 using namespace std;
+
 class student{
     public:
-    int rollNO;
-    string studentName;
-    student* next=NULL;
-    student(int r,string n){
-        studentName=n;
-        rollNO=r;
-    }
-
+    string faculty="Vikas";
+    void display();
 };
+
+void student::display(){
+    cout<<faculty<<endl;
+}
+
 int main(){
-    student s1(68,"Dhruv");
-    student s2(66,"Keshav");
-    student s3(65,"Bhaskar");
-    s1.next=&s2;
-    s2.next=&s3;
-cout<<s1.studentName<<endl;
-cout<<s1.next->studentName<<endl;
-cout<<s1.next->next->studentName<<endl;
+student s;
+s.display();
 }
