@@ -223,20 +223,93 @@
 // }
 
 
+// #include <iostream>
+// using namespace std;
+
+// class student{
+//     public:
+//     string faculty="Vikas";
+//     void display();
+// };
+
+// void student::display(){
+//     cout<<faculty<<endl;
+// }
+
+// int main(){
+// student s;
+// s.display();
+// }
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// class student{
+//     public:
+//     int roll;
+//     string name;
+//     student(string name,int roll){
+// this->name=name;
+// this->roll=roll;
+//     }
+//     student(student& s){
+//         name=s.name;
+//         roll=s.roll;
+//         cout<<name<<" "<<roll<<endl;
+//     }
+// };
+// int main(){
+//     student s1("Dhruv",68);
+//     student s2(s1);
+// }
+
+
+
+// #include <iostream>
+// using namespace std;
+// class Student{
+//     public:
+//     int name;
+//     void Display(int name){
+//         cout<<name<<endl;
+
+//     }
+// };
+
+// class c:public Student{
+//     public:
+//     int roll;
+//     void Display(int roll){
+//         cout<<roll<<endl;
+//     }
+// };
+
+
+// int main(){
+// Student* s;
+// c s1;
+// s=&s1;
+// s1.Display(15);
+// s->Display(16);
+// }
+
+
 #include <iostream>
 using namespace std;
 
-class student{
+class Student{
     public:
-    string faculty="Vikas";
-    void display();
+    int marks;
 };
-
-void student::display(){
-    cout<<faculty<<endl;
+Student create(){
+    Student s;
+    s.marks=90;
+    return s;
 }
 
 int main(){
-student s;
-s.display();
+    Student s1=create();
+    cout<<s1.marks<<endl;
 }
